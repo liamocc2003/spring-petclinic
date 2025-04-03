@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'make build'
+                sh './mvnw sprint-boot:run'
                 archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
             }
         }
