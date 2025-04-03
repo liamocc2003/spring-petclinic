@@ -4,20 +4,13 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                bat 'make'
+                sh 'make build'
                 archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
             }
         }
 
         stage('Deploy') {
-            when {
-                expression {
-                    currentBuild.result == null || currentBuild.result == 'SUCCESS'
-                }
-            }
-            steps {
-                bat 'make publish'
-            }
+            echo "Deploying..."
         }
     }
 }
