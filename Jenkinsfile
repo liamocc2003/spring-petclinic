@@ -5,7 +5,14 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                bat 'docker build -t devops'
+                sh 'mvn --version'
+                sh 'docker build -t spring-petclinic .'
+            }
+        }
+
+        stage('Run'){
+            steps{
+                echo 'Running...'
             }
         }
 
