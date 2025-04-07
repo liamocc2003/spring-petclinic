@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                bat 'docker build -t t00226053/spring-petclinic:latest .'
+                bat 'docker build -t t00226053/devops-server:latest .'
             }
         }
 
