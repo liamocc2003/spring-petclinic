@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                sh 'mvn spring-boot:run'
+                bat 'docker build -t devops'
             }
         }
 
