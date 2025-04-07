@@ -5,8 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                sh 'mvn --version'
-                sh 'docker build -t spring-petclinic .'
+                sh 'docker build -t t00226053/spring-petclinic .'
             }
         }
 
