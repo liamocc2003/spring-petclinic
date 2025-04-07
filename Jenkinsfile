@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                bat 'docker build -t t00226053/spring-petclinic:latest .' || echo 'Will not build'
+                bat 'docker build -t t00226053/spring-petclinic:latest .'
             }
         }
 
