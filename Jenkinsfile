@@ -17,7 +17,7 @@ pipeline {
                 echo 'Building...'
 
                 bat '''
-                    docker pull ${IMAGE}
+                    docker pull %IMAGE%
                 '''
             }
         }
@@ -27,7 +27,7 @@ pipeline {
                 echo 'Running...'
 
                 bat '''
-                    docker run -p 8080:8080 --rm ${IMAGE}
+                    docker run -p 8080:8080 --rm %IMAGE%
                 '''
             }
         }
