@@ -1,9 +1,5 @@
 pipeline {
-    agent {
-        docker {
-            image "maven:3.9.9-amazoncorretto-17-debian"
-        }
-    }
+    agent any
 
     stages {
         stage('Build') {
