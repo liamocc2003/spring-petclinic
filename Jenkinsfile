@@ -2,7 +2,6 @@ pipeline {
     agent {
         docker {
             image 'devops-server:latest'
-            label 'Docker'
         }
     }
 
