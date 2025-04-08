@@ -6,8 +6,8 @@ pipeline {
             steps {
                 echo 'Building...'
 
-                sh '''
-                    mvn --version
+                bat '''
+                    docker build -t t00226053/spring-petclinic
                 '''
             }
         }
