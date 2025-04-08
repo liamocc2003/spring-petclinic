@@ -1,6 +1,0 @@
-server:
-  port: 8081
-  ssl:
-    enabled: false
-  http:
-    port: 8082
