@@ -1,6 +1,8 @@
 pipeline {
     agent {
-        image "maven:3.9.9-amazoncorretto-17-debian"
+        docker {
+            image "maven:3.9.9-amazoncorretto-17-debian"
+        }
     }
 
     stages {
