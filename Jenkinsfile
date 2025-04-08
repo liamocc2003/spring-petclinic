@@ -7,7 +7,7 @@ pipeline {
                 echo 'Building...'
 
                 bat '''
-                    docker build -t t00226053/spring-petclinic
+                    docker pull t00226053/spring-petclinic:latest
                 '''
             }
         }
@@ -15,6 +15,10 @@ pipeline {
         stage('Run'){
             steps{
                 echo 'Running...'
+
+                bat '''
+                    docker run --rm t00226053/spring-petclinic:latest
+                '''
             }
         }
 
