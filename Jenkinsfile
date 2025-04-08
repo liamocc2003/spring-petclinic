@@ -1,18 +1,23 @@
 pipeline {
     agent any
 
+    environment {
+	    IMAGE = 't00226053/spring-petclinic:latest'
+    }
+
     stages {
-	stage('Testing') {
-	    steps {
-	    	echo 'Testing...'
+	    stage('Testing') {
+	        steps {
+	    	    echo 'Testing...'
+	        }
 	    }
-	}
+
         stage('Build') {
             steps {
                 echo 'Building...'
 
                 bat '''
-                    docker pull t00226053/spring-petclinic:latest
+                    docker pull ${IMAGE}
                 '''
             }
         }
@@ -22,7 +27,7 @@ pipeline {
                 echo 'Running...'
 
                 bat '''
-                    docker run -p 8080:8080 --rm t00226053/spring-petclinic:latest
+                    docker run -p 8080:8080 --rm ${IMAGE}
                 '''
             }
         }
