@@ -17,7 +17,7 @@ pipeline {
                 echo 'Running...'
 
                 bat '''
-                    docker run --rm t00226053/spring-petclinic:latest
+                    docker run --rm t00226053/spring-petclinic:latest -p 8081:8080
                 '''
             }
         }
