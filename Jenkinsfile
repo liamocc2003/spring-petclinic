@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'Building...'
 
-                bat '''
+                sh '''
                     mvn --version
                 '''
             }
