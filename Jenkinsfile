@@ -1,9 +1,5 @@
 pipeline {
-    agent {
-        docker {
-            image 'devops-server:latest'
-        }
-    }
+    agent any
 
     stages {
         stage('Build') {
@@ -12,9 +8,6 @@ pipeline {
 
                 bat '''
                     mvn --version
-                '''
-                bat '''
-                    docker build -t t00226053/devops-server:latest .
                 '''
             }
         }
