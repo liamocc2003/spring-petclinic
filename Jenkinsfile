@@ -15,7 +15,7 @@ pipeline {
 	    	        def scanner_home = tool name: 'sonarqube_scanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
                     withSonarQubeEnv('sonar') {
                         bat '''
-                            echo %cd%
+                            echo %scanner_home%
                             %scanner_home%/bin/sonarqube-scanner
                         '''
                     }
