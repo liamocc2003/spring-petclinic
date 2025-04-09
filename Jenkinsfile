@@ -9,6 +9,15 @@ pipeline {
 	    stage('Testing') {
 	        steps {
 	    	    echo 'Testing...'
+
+	    	    script {
+	    	        def scanner_home = tool name: 'sonarqube_scanner', type: 'hudson.plugins.sonar.sonarRunnerInstallation'
+                    withSonarQubeEnv('sonar') {
+                        bat '''
+                            %scanner_home%/bin/sonarqube-scanner
+                        '''
+                    }
+	    	    }
 	        }
 	    }
 
@@ -23,7 +32,7 @@ pipeline {
         }
 
         stage('Run') {
-            steps{
+            steps {
                 echo 'Running...'
 
                 bat '''
