@@ -16,7 +16,7 @@ pipeline {
                         bat '''
                             cd ../../tools/hudson.plugins.sonar.SonarRunnerInstallation/sonarqube_scanner/bin
 
-                            sonar-scanner -Dsonar.projectKey=spring-petclinic -D
+                            sonar-scanner -Dsonar.projectKey=spring-petclinic
                         '''
                     }
 	    	    }
