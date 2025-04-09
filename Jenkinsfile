@@ -3,6 +3,7 @@ pipeline {
 
     environment {
 	    IMAGE = 't00226053/spring-petclinic:latest'
+	    SONAR_SECRET = 'squ_9c9b469a9034d2cabb81526ae96b0268b5f906f7'
     }
 
     stages {
@@ -14,6 +15,7 @@ pipeline {
 	    	        def scanner_home = tool name: 'sonarqube_scanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
                     withSonarQubeEnv('sonar') {
                         bat '''
+                            echo %cd%
                             %scanner_home%/bin/sonarqube-scanner
                         '''
                     }
