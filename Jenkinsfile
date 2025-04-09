@@ -14,7 +14,9 @@ pipeline {
 	    	    script {
                     withSonarQubeEnv('sonar') {
                         bat '''
-                            ../../tools/hudson.plugins.sonar.SonarRunnerInstallation/sonarqube_scanner/bin/sonar-scanner
+                            cd ../../tools/hudson.plugins.sonar.SonarRunnerInstallation/sonarqube_scanner/bin
+
+                            sonar-scanner
                         '''
                     }
 	    	    }
