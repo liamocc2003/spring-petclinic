@@ -39,6 +39,7 @@ pipeline {
                 echo 'Running...'
 
                 bat '''
+                    docker stop %CONTAINER%
                     docker rm %CONTAINER%
                     docker run -p 8080:8080 -d --name %CONTAINER% %IMAGE%
                 '''
