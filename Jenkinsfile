@@ -3,7 +3,7 @@ pipeline {
 
     environment {
 	    IMAGE = 't00226053/spring-petclinic:latest'
-	    SONAR_SECRET = 'squ_9c9b469a9034d2cabb81526ae96b0268b5f906f7'
+	    SONAR_TOKEN = 'squ_9c9b469a9034d2cabb81526ae96b0268b5f906f7'
     }
 
     stages {
@@ -14,7 +14,7 @@ pipeline {
 	    	    script {
                     withSonarQubeEnv('sonar') {
                         bat '''
-                            ../../tools/hudson.plugins.sonar.SonarRunnerInstallation/sonarqube_scanner/bin/sonarqube-scanner
+                            ../../tools/hudson.plugins.sonar.SonarRunnerInstallation/sonarqube_scanner/bin/sonar-scanner
                         '''
                     }
 	    	    }
