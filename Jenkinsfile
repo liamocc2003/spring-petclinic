@@ -3,6 +3,7 @@ pipeline {
 
     environment {
 	    IMAGE = 't00226053/spring-petclinic:latest'
+	    CONTAINER = 'petclinic'
 	    SONAR_TOKEN = 'squ_9c9b469a9034d2cabb81526ae96b0268b5f906f7'
     }
 
@@ -38,7 +39,7 @@ pipeline {
                 echo 'Running...'
 
                 bat '''
-                    docker run -p 8080:8080 --rm %IMAGE%
+                    docker run -p 8080:8080 -d --name %CONTAINER% %IMAGE%
                 '''
             }
         }
