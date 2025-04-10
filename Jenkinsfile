@@ -52,7 +52,7 @@ pipeline {
             emailext (
                 subject: "Jenkins Test Email",
                 body: "Test",
-                to: "liamocc2003@gmail.com"
+                to: "liam.oconnor-collum@students.ittralee.ie"
             )
         }
     }
