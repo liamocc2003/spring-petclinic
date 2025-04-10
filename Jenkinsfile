@@ -45,5 +45,16 @@ pipeline {
                 '''
             }
         }
+
+        stage('Dashboard') {
+            steps {
+                echo 'Loading dashboard details...'
+
+                bat '''
+                    docker start prometheus
+                    docker start grafana
+                '''
+            }
+        }
     }
 }
