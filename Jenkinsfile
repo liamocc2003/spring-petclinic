@@ -50,11 +50,11 @@ pipeline {
     post {
         always {
             emailext (
-                subject: 'Jenkins Build No.%env.BUILD_NUMBER%',
+                subject: 'Jenkins Build No.1',
                 body: '''
-                    <p>Job: %env.JOB_NAME%</p>
-                    <p>Build No.: %env.BUILD_NUMBER%</p>
-                    <p>Site available <a href="localhost:8080">here</a></p>
+                    <p>Job: pipeline</p>
+                    <p>Build No.: 1</p>
+                    <p>Site available</p>
                 ''',
                 to: 'liamocc2003@gmail.com'
             )
