@@ -46,4 +46,14 @@ pipeline {
             }
         }
     }
+
+    post {
+        always {
+            emailext (
+                subject: "Jenkins Test Email",
+                body: "Test",
+                to: "liamocc2003@gmail.com"
+            )
+        }
+    }
 }
