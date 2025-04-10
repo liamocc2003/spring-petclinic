@@ -46,18 +46,4 @@ pipeline {
             }
         }
     }
-
-    post {
-        always {
-            emailext (
-                subject: 'Jenkins Build No.1',
-                body: '''
-                    <p>Job: pipeline</p>
-                    <p>Build No.: 1</p>
-                    <p>Site available</p>
-                ''',
-                to: 'liamocc2003@gmail.com'
-            )
-        }
-    }
 }
